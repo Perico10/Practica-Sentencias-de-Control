@@ -28,6 +28,41 @@ public class Apartado030103 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+		int nota=0;
+		System.out.println("Introduce una nota del 1 al 10");
+		nota=Teclado.readInteger();
+		
+		switch(nota){
+			case 1:
+
+			case 2:
+
+			case 3:
+
+			case 4:
+				System.out.println("Insuficiente");
+				break;
+			case 5:
+				System.out.println("Suficiente");
+				break;
+			case 6:
+				System.out.println("Bien");
+				break;
+			case 7:
+			case 8:
+				System.out.println("Notable");
+				break;
+			case 9:
+				System.out.println("Sobresaliente");
+				break;
+			case 10:
+				System.out.println("Matricula");
+				break;
+			default:
+				System.out.println("nota incorrecta");
+				break;
+			
+		}
         // Fin modificacion
 	}
 
@@ -43,6 +78,20 @@ public class Apartado030103 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
+		int n=0,ultimoDigito;
+		System.out.println("Introduce un numero");
+		n=Teclado.readInteger();
+		ultimoDigito=n%10;
+		switch(ultimoDigito){
+			case 0:
+				System.out.println("Un anillo");
+				break;
+			case 8:
+				System.out.println("Dos anillos");
+				break;			
+			default:
+				System.out.println("Cero anillos");
+		}
 		// Fin modificacion
 	}
 
@@ -57,6 +106,43 @@ public class Apartado030103 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		int n1=0,n2=0,eleccion=0,n3=0;
+		boolean aux=true;
+		System.out.println("Introduzca un numero");
+		n1=Teclado.readInteger();
+		System.out.println("Introduzca otro numero");
+		n2=Teclado.readInteger();
+		
+		System.out.println("Que desea hacer: \n1 - Sumar \n2 - Multiplicar \n3 - Divisores");
+		eleccion=Teclado.readInteger();
+		switch(eleccion){
+			case 1:
+				n3=n1+n2;
+				System.out.println("n1+n2= "+n3);
+				break;
+			case 2:
+				n3=n1*n2;
+				System.out.println("n1*n2= "+n3);
+				break;
+			case 3:
+				if(n1%n2==0){
+					System.out.println("n1 es divisor de n2");
+					aux=false;
+				}
+				if(n2%n1==0){
+					System.out.println("n2 es divisor de n1");
+					aux=false;
+				}
+				if(aux==true){
+					System.out.println("No son divisores");
+				}
+				break;
+			default:
+				System.out.println("Opcion incorrecta");
+				break;
+			
+		}
+		
 		// Fin modificacion
 	}
 
@@ -72,6 +158,21 @@ public class Apartado030103 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		String cadena;
+		System.out.println("Introduzca una cadena");
+		cadena=Teclado.readString();
+		switch(cadena.charAt(0)){
+			case 'a': case 'e': case 'i': case 'o': case 'u':
+				System.out.println("Vocal minuscula");
+				break;
+			case 'A': case 'E': case 'I': case 'O': case 'U':
+				System.out.println("Vocal mayuscula");
+				break;
+			default:
+				System.out.println("Otro caracter");
+				break;
+		}
+		
 		// Fin modificacion
 	}
 }

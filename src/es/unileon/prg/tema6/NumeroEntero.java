@@ -106,23 +106,29 @@ public class NumeroEntero {
 	}
 	
 	
-	 /* -- Inicio modificacion del ejercicio10 Apartado030101.
-	 * boolean equals(NumeroEntero n){
-	 *	  
-	 * }
-	 * 
-	 * -- Fin modificacion del ejercicio10 Apartado030101
-	 */
+	//Inicio modificacion del ejercicio10 Apartado030101.
+	boolean equals(NumeroEntero n){
+		if(this._valor==n.getValor()){
+			return true;
+		}
+		return false;
+	}
+	 
+	//Fin modificacion del ejercicio10 Apartado030101
 	 
 	
 	
-	/* -- Inicio modificacion del ejercicio02 Apartado030102.
-	 * int comapreTo(NumeroEntero n){
-	 * 
-	 * 
-	 * }
-	 * -- Fin modificacion del ejercicio02 Apartado030102.
-	 */
+	//Inicio modificacion del ejercicio02 Apartado030102.
+	int compareTo(NumeroEntero n){
+		if(this._valor<n.getValor()){
+			return -1;
+		}else if(this._valor>n.getValor()){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	 //Fin modificacion del ejercicio02 Apartado030102.
 	
 	
 	
