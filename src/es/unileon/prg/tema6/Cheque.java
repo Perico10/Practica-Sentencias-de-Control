@@ -39,7 +39,32 @@ public class Cheque
     {
     	boolean esFalso=false;
     	//Inicio modificacion - ejercicio02() de la clase Apartado030204 -.
-    	
+  		char digito;
+        int i, contadorDeCeros, contadorDeNoCeros;
+       
+        contadorDeCeros = 0;
+        contadorDeNoCeros = 0;
+       
+        i = 0;
+        while ( (!esFalso) && (i < _DIGITOS)){
+            digito = this._numeroDeCheque.charAt(i);
+            if (digito == '0')
+            {
+                contadorDeCeros++;
+                contadorDeNoCeros = 0;
+                if (contadorDeCeros == 3)
+                    esFalso = true;
+            }
+            else
+            {
+                contadorDeNoCeros++;
+                contadorDeCeros = 0;
+                if (contadorDeNoCeros == 4)
+                    esFalso = true;
+            }
+              
+            i++;
+		}    	
     	
     	
     	//Fin modificacion - ejercicio02() de la clase Apartado030204 -.

@@ -25,7 +25,12 @@ public class Apartado030201 extends Apartado {
 	public void ejercicio01() {
 		cabecera("01","");
 
-		// Inicio modificacion		
+		// Inicio modificacion
+		int suma=0;;
+		for(int i=0;i<=100;i++){
+			suma=suma+i;
+		}
+		System.out.println(suma);
         // Fin modificacion
 	}
 
@@ -39,6 +44,14 @@ public class Apartado030201 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
+		int suma=0,media=0;
+		for(int i=0;i<=1000;i++){
+			if(i%2!=0){
+				suma=suma+i;
+			}
+		}
+		media=suma/500;
+		System.out.println(media);
 		// Fin modificacion
 	}
 
@@ -53,6 +66,26 @@ public class Apartado030201 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		int n1=0,n2=0,menor=0,mayor=0, suma=0;
+		System.out.println("Introduce un numero");
+		n1=Teclado.readInteger();
+		System.out.println("Introduce otro numero");
+		n2=Teclado.readInteger();
+		if(n1<n2){
+			mayor=n2;
+			menor=n1;
+		}else if(n2<n1){
+			mayor=n1;
+			menor=n2;
+		}else{
+			mayor=n1;
+			menor=n2;
+		}
+		
+		for(int i=menor;i<=mayor;i++){
+			suma=suma+i;
+		}
+		
 		
 		// Fin modificacion
 	}
@@ -68,6 +101,24 @@ public class Apartado030201 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		int contador3=0, contador5=0,contador7=0;
+		int[] numeros=new int[10];
+		
+		System.out.println("Introduce 10 numeros");
+		for(int i=0;i<10;i++){
+			numeros[i]=Teclado.readInteger();
+		}
+		for(int i=0;i<10;i++){
+			if(numeros[i]==3){
+				contador3++;
+			}else if(numeros[i]==5){
+				contador5++;
+			}else if(numeros[i]==7){
+				contador7++;
+			}
+		}
+		
+		System.out.println("El 3 aparece = "+contador3+" ,el 5 aparece = "+contador5+" y el 7 aparece = "+contador7);
 		
 		// Fin modificacion
 	}
@@ -83,6 +134,24 @@ public class Apartado030201 extends Apartado {
 		cabecera("05","");
 
 		// Inicio modificacion
+		int mayor=0,menor=999999;
+		int[] numeros=new int[10];
+		
+		System.out.println("Introduce 10 numeros");
+		for(int i=0;i<10;i++){
+			numeros[i]=Teclado.readInteger();
+		}
+		
+		for(int i=0;i<10;i++){
+			if(mayor<numeros[i]){
+				mayor=numeros[i];
+			}
+			if(menor>numeros[i]){
+				menor=numeros[i];
+			}
+		}
+		
+		System.out.println("El mayor es = "+mayor+" ,el menor es = "+menor);
         // Fin modificacion
 	}
 
@@ -101,7 +170,30 @@ public class Apartado030201 extends Apartado {
 		cabecera("06", "");
 
 		// Inicio modificacion
+		int n1=0,n2=0,menor=0,mayor=0, sumaPares=0,sumaImpares=0;
+		System.out.println("Introduce un numero");
+		n1=Teclado.readInteger();
+		System.out.println("Introduce otro numero");
+		n2=Teclado.readInteger();
 		
+		if(n1<n2){
+			mayor=n2;
+			menor=n1;
+		}else if(n2<n1){
+			mayor=n1;
+			menor=n2;
+		}else{
+			mayor=n1;
+			menor=n2;
+		}
+		
+		for(int i=menor;i<=mayor;i++){
+			if(i%2==0){
+				sumaPares=sumaPares+i;
+			}else if(i%2!=0){
+				sumaImpares=sumaImpares+i;
+			}
+		}	
 		
 		// Fin modificacion
 	}
@@ -119,6 +211,26 @@ public class Apartado030201 extends Apartado {
 		cabecera("07", "");
 
 		// Inicio modificacion
+		String cadena;
+		StringBuffer vocales=new StringBuffer();
+		StringBuffer resto=new StringBuffer();
+		
+		System.out.println("Introduce una cadena en minusculas: ");
+		cadena=Teclado.readString();
+		
+		for(int i=0;i<cadena.length();i++){
+			if(cadena.charAt(i)=='a' || cadena.charAt(i)=='e' || cadena.charAt(i)=='i' || cadena.charAt(i)=='o' || cadena.charAt(i)=='u'){
+				vocales.append(cadena.charAt(i));
+			}else{
+				resto.append(cadena.charAt(i));
+			}
+		}
+		
+		System.out.println(vocales.toString());
+		System.out.println(resto.toString());
+		
+		System.out.println(vocales.toString().toUpperCase());
+		System.out.println(resto.toString().toUpperCase());		
 		// Fin modificacion
 	}
 
@@ -146,6 +258,30 @@ public class Apartado030201 extends Apartado {
 		cabecera("08", "");
 
 		// Inicio modificacion
+		int nCadenas=0, masCaracteres=0;
+		StringBuffer cadenaMayor=new StringBuffer();
+		
+		System.out.println("Introduce el numero de cadenas que vas a escribir");
+		nCadenas=Teclado.readInteger();
+		
+		String[] cadenas=new String[nCadenas];
+		
+		System.out.println("Introduce las cadenas: ");
+		for(int i=0;i<nCadenas;i++){
+			cadenas[i]=Teclado.readString();
+		}
+		
+		for(int i=0;i<nCadenas;i++){
+			if(cadenas[i].length()>masCaracteres){
+				masCaracteres=cadenas[i].length();
+				cadenaMayor.setLength(0);
+				cadenaMayor.append(cadenas[i]);
+			}
+		}
+		
+		System.out.println("La cadena mas larga es = "+cadenaMayor);
+		
+		
 		// Fin modificacion
 	}
 
@@ -176,24 +312,23 @@ public class Apartado030201 extends Apartado {
 
 		// Inicio modificacion
 		
-		/* Quitar comentarios
-	    int n=4; //Numero de rectangulos a leer
-		 Rectangulo rectanguloMaximo,rectangulo;
+	    int n=4,base=0,altura=0; //Numero de rectangulos a leer
+		Rectangulo rectanguloMaximo,rectangulo;
+		rectanguloMaximo=new Rectangulo(0,0);
 		
-		for ()
-		{
+		for (int i=0;i<n;i++){
 			System.out.print("Introduce la base del rectangulo "+i+" :");
 			base=Teclado.readInteger();
 			System.out.print("Introduce la altura del rectangulo "+i+" :");
 			altura=Teclado.readInteger();
 			rectangulo=new Rectangulo(base,altura);
-			
-			
+			if(rectangulo.compareTo(rectanguloMaximo)==1){
+				rectanguloMaximo=rectangulo;
+			}		
 		}
 		
-		System.out.println("El rectangulo con mayor area es "+ );
+		System.out.println("El rectangulo con mayor area es "+ rectanguloMaximo);
 		
-		*/
 		// Fin modificacion
 	}
 			

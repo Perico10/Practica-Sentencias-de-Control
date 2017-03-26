@@ -28,7 +28,26 @@ public class Apartado030202 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+		int mayor=0,menor=999999;
+		int[] numeros=new int[10];
+		int i=0;
 		
+		System.out.println("Introduce 10 numeros");
+		while(i<10){
+			numeros[i]=Teclado.readInteger();
+			i++;
+		}
+		
+		for(i=0;i<10;i++){
+			if(mayor<numeros[i]){
+				mayor=numeros[i];
+			}
+			if(menor>numeros[i]){
+				menor=numeros[i];
+			}
+		}
+		
+		System.out.println("El mayor es = "+mayor+" y el menor es = "+menor);		
 		
 		
 					
@@ -45,8 +64,21 @@ public class Apartado030202 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
+		int actual, anterior;
+		boolean repetido=false;
 		
+		System.out.println("Introduce numeros hasta que introduzcas dos iguales o un 0: ");
+		actual=Teclado.readInteger();
+		anterior=actual;
 		
+		while((actual!=0 && !repetido)){
+			System.out.println("Introduce numeros hasta que introduzcas dos iguales o un 0: ");
+			actual=Teclado.readInteger();
+			if(actual==anterior){
+				repetido=true;
+			}
+			anterior=actual;
+		}
 		// Fin modificacion
 	}
 
@@ -66,6 +98,38 @@ public class Apartado030202 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		int n1=0, n2=0;
+		int sumaPares=0, sumaImpares=0;
+		int par, impar;
+		
+		System.out.println("Introduce un numero:");
+		n1=Teclado.readInteger();
+
+		System.out.println("Introduce otro numero:");
+		n2=Teclado.readInteger();
+		
+		if (n1%2==0){
+			par=n1;
+			impar=n1+1;
+		}
+		else{
+			impar=n1;
+			par=n1+1;
+		}
+		
+		while ((par<=n2) || (impar<=n2)) {
+			if (par<=n2)
+				sumaPares=sumaPares+par;
+			if (impar<=n2)
+				sumaImpares=sumaImpares+impar;
+			
+			par=par+2;
+			impar=impar+2;
+		}
+		
+		System.out.println("La suma es de los pares es-> "+sumaPares);
+	System.out.println("La suma es de los impares es-> "+sumaImpares);		
+		
 		// Fin modificacion
 	}
 
@@ -101,6 +165,21 @@ public class Apartado030202 extends Apartado {
 		cabecera("05","");
 
 		// Inicio modificacion
+		int n;
+		NumeroEntero numeroEntero;
+		
+		System.out.println("Introduce un numero entero:");
+		n=Teclado.readInteger();
+		
+		numeroEntero=new NumeroEntero(n);
+		
+		System.out.println();
+		System.out.println("Numero de digitos de "+numeroEntero+" -> "+numeroEntero.numeroDigitos());
+		System.out.println("El inverso de "+numeroEntero+" -> "+numeroEntero.inverso());
+		if (numeroEntero.esCapicua())
+			System.out.println(numeroEntero+" es capicua");
+		else
+System.out.println(numeroEntero+" no es capicua");		
         // Fin modificacion
 	}
 

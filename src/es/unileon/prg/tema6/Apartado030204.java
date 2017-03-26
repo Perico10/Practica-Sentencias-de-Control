@@ -26,6 +26,37 @@ public class Apartado030204 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+		int n1, n2;
+		
+		int numero;
+		int sumaDivisores,divisor;
+		
+		System.out.print("Introduce el numero 1:");
+		n1=Teclado.readInteger();
+
+		System.out.print("Introduce el numero 2:");
+		n2=Teclado.readInteger();
+		
+		System.out.println();
+		for(numero=n1;numero<=n2;numero++){
+			
+			sumaDivisores=0;
+			divisor=1;
+			do{
+				
+				if(numero % divisor==0)
+					sumaDivisores=sumaDivisores+divisor;
+					
+				divisor++;
+				
+			
+			}while (divisor<numero);
+			
+			if (numero==sumaDivisores){
+				System.out.println("El numero "+numero+ " es perfecto");
+			}
+			
+}		
         // Fin modificacion
 	}
 
@@ -46,10 +77,10 @@ public class Apartado030204 extends Apartado {
 
 		Cheque cheque=null;
 		
-		//Modificar el numero de cheque para peobar
+		//Modificar el numero de cheque para probar
 		//cheque=new Cheque("1000988887");    
         //cheque=new Cheque("1010098888");
-        //cheque=new Cheque("1009808880");   
+        cheque=new Cheque("1009808880");   
         
        
          if (cheque.esFalso()== true)
@@ -89,6 +120,43 @@ public class Apartado030204 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		int tam;
+		
+		System.out.print("Introduce el tamanio:");
+		tam=Teclado.readInteger();
+		
+			
+		System.out.print("\nTriangulo:\n");
+		
+		for (int i=0;i<tam;i++){
+			for(int j=0;j<i+1;j++)
+				System.out.print('*');
+			System.out.println();
+		}
+		
+		System.out.print("\nCuadrado relleno:\n");
+		
+		for (int i =0;i<tam;i++){
+			for(int j=0;j<tam;j++)
+				System.out.print('*');
+			System.out.println();
+		}
+		
+		
+		System.out.print("\nCuadrado vacio:\n");
+		
+		for (int i =0;i<tam;i++){
+			for(int j=0;j<tam;j++){
+				if ((i==0) || (j==0))
+					System.out.print('*');
+				else if ((i==tam-1) || (j==tam-1))
+					System.out.print('*');
+				else
+					System.out.print(' ');
+			}
+			
+			System.out.println();
+		}		
 		// Fin modificacion
 	}
 
@@ -113,6 +181,54 @@ public class Apartado030204 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		int numero,numeroSecreto;
+		int N_MAXIMO_INTENTOS=5;
+		int intentos=0;
+		boolean acierto,jugar;
+		int opcion;
+		
+		jugar=true;
+		
+		do{
+			//Ordenador piensa el numero
+			numeroSecreto=(int)(Math.random()*100);
+			System.out.println("\nHe pensado en numero entre 1 y 100 .....");
+			System.out.println("Vamos a jugar ...\n");			
+			acierto=false;
+			intentos=0;
+			
+			do
+			{
+				System.out.print("Cual es el numero (del 1 al 100)): ");
+				numero=Teclado.readInteger();
+				intentos++;
+				if (numero==numeroSecreto)
+					acierto=true;
+				else if (numero <numeroSecreto)
+					System.out.println("El numero secreto es mayor que el que has introducido");
+				else
+					System.out.println("El numero secreto es menor que el que has introducido");
+				
+			}while ((!acierto) && (intentos<N_MAXIMO_INTENTOS));
+			
+			System.out.println();
+			
+			if (acierto){
+				System.out.println("Has acertado el numero es "+numeroSecreto);
+				System.out.println("Numero de intentos "+intentos);
+			}
+			else{
+				System.out.println("Has agotado los intentos");
+				System.out.println("El numero secreto es "+numeroSecreto);
+			}
+			
+			
+			System.out.print("\n\nQuieres volver a jugar (1 - SI, 2- NO): ");
+			opcion=Teclado.readInteger();
+			if (opcion!=1)
+				jugar=false;
+	
+		}while(jugar);
 		// Fin modificacion
 	}
 }

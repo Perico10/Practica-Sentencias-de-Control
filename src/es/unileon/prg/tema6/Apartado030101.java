@@ -39,13 +39,15 @@ public class Apartado030101 extends Apartado {
 		cabecera("01","");
 
 		//Cambiar el valor de la nota para hacer pruebas
-		float nota=(float) 5.5;
+		float nota=(float) 4;
 			
 		Alumno alumno =new Alumno("1000011111","Juan");
 		alumno.asignarNota(nota);
 		System.out.println(alumno);
 		//Inicio modificacion
-		
+		if(nota<5){
+			System.out.println("El alumno debe recuperar");
+		}
 		
 		// Fin modificacion
 	}
@@ -63,7 +65,17 @@ public class Apartado030101 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
+		Alumno alumno =new Alumno("1000011111","Juan");
+		Teclado teclado=new Teclado();
+		System.out.println("Introduce la nota del alumno");
+		float nota=(float) teclado.readFloat();
+		alumno.asignarNota(nota);
 		
+		System.out.println(alumno);
+		
+		if(nota<5){
+			System.out.println("El alumno debe recuperar");
+		}
 		
 		// Fin modificacion
 	}
@@ -82,7 +94,22 @@ public class Apartado030101 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		Alumno alumno =new Alumno("1000011111","Juan");
+		Teclado teclado=new Teclado();
+		System.out.println("Introduce la nota del alumno");
+		float nota=(float) teclado.readFloat();
+		if(nota==Float.MIN_VALUE){
+			System.out.println("Valor introducido incorrecto");
+		}else{
+			alumno.asignarNota(nota);
 		
+			System.out.println(alumno);
+		
+			if(nota<5){
+				System.out.println("El alumno debe recuperar");
+			}
+		}
+				
 		// Fin modificacion
 		System.out.println("Fin del ejercicio03");
 	}
@@ -148,17 +175,17 @@ public class Apartado030101 extends Apartado {
 
 
 		// Inicio modificacion
-		/* -- Quitar comentarios
-		if (nota1 >=5)
+		if (nota1 >=5){
            sumaNotas=nota1;
-           if (nota2>=5)
-             sumaNotas=sumaNotas + nota2;
-             if (nota3>=5)
-                sumaNotas=sumaNotas + nota3;
-                media=sumaNotas/3;
+        }
+        if (nota2>=5){
+        	sumaNotas=sumaNotas + nota2;
+        }
+        if (nota3>=5){
+        	sumaNotas=sumaNotas + nota3;
+            media=sumaNotas/3;
+        }
                
-       }
-       */
 	   // Fin modificacion
 		
       
@@ -179,6 +206,31 @@ public class Apartado030101 extends Apartado {
 		cabecera("06", "");
 
 		// Inicio modificacion
+		Alumno alumno =new Alumno("1000011111","Juan");
+		int nota1=0, nota2=0, nota3=0, sumaNotas=0;
+		float media=0;
+       
+		System.out.println("Introduce la nota del primer examen:");
+		nota1=Teclado.readInteger();
+
+		System.out.println("Introduce la nota del segundo examen:");
+		nota2=Teclado.readInteger();
+
+		System.out.println("Introduce la nota del tercer examen:");
+		nota3=Teclado.readInteger();
+
+		if (nota1>=5){
+           		sumaNotas=nota1;
+          			if (nota2>=5){
+             				sumaNotas=sumaNotas + nota2;
+            					if (nota3>=5){
+                					sumaNotas=sumaNotas + nota3;
+                					media=sumaNotas/3;
+						}
+				}
+		}
+		alumno.asignarNota(media);
+		System.out.println(alumno);
 		// Fin modificacion
 	}
 
@@ -229,7 +281,10 @@ public class Apartado030101 extends Apartado {
 
 		Rectangulo rectangulo= new Rectangulo(base,altura);
 		// Inicio modificacion
+		rectangulo.setBase(base);
+		rectangulo.setAltura(altura);
 		
+		System.out.println(rectangulo.toString());	
 		
 		// Fin modificacion
 	}
@@ -244,9 +299,21 @@ public class Apartado030101 extends Apartado {
 	 */
 	public void ejercicio08() {
 		cabecera("08", "");
-
-		// Inicio modificacion
 		
+		int n1=0, n2=0, aux1=0,aux2=0;
+		// Inicio modificacion
+		System.out.println("Introduce un numero");
+		n1=Teclado.readInteger();
+		aux1=n1;
+		System.out.println("Introduce otro numero");
+		n2=Teclado.readInteger();
+		aux2=n2;
+		System.out.println("n1= "+n1+" n2= "+n2);
+		if(n1>n2){
+			n1=aux2;
+			n2=aux1;
+		}
+		System.out.println("n1= "+n1+" n2= "+n2);
 		
 		// Fin modificacion
 	}

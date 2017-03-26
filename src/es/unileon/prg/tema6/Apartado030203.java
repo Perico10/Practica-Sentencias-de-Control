@@ -26,6 +26,11 @@ public class Apartado030203 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+		int eleccion=0;
+		do{
+			System.out.println("1.-Opcion1  2.-Opcion2  3.-Opcion3  4.-Salir");
+			eleccion=Teclado.readInteger();
+		}while(eleccion!=4);
         // Fin modificacion
 	}
 
@@ -42,6 +47,16 @@ public class Apartado030203 extends Apartado {
 		cabecera("02", "");
 
 		// Inicio modificacion
+		boolean repetido=false;
+		int actual, anterior=0;
+		
+		do{
+			System.out.println("Introduce un numero:");
+			actual=Teclado.readInteger();
+			if (actual==anterior)
+				repetido=true;
+			anterior=actual;
+		}while ((actual!=0) && !repetido);		
 		// Fin modificacion
 	}
 
@@ -58,6 +73,20 @@ public class Apartado030203 extends Apartado {
 		cabecera("03", "");
 
 		// Inicio modificacion
+		Rectangulo rectangulo=null;
+		int base, altura;
+				
+		do{
+			System.out.print("Introduce la base del rectangulo :");
+			base=Teclado.readInteger();
+			System.out.print("Introduce la altura del rectangulo :");
+			altura=Teclado.readInteger();
+			rectangulo=new Rectangulo(base,altura);
+			
+			System.out.println(rectangulo);
+			System.out.println("Area: "+rectangulo.getArea());
+			System.out.println();
+		}while (base>0 && altura>0);		
 		// Fin modificacion
 	}
 
@@ -85,6 +114,36 @@ public class Apartado030203 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		int numero;
+		int sumaDivisores,divisor;
+		
+		
+		System.out.print("Introduce un numero:");
+		numero=Teclado.readInteger();
+		
+		
+		System.out.print("\nDivisores: ");
+		sumaDivisores=0;
+		divisor=1;
+		do{
+			
+			if(numero % divisor==0){
+				sumaDivisores=sumaDivisores+divisor;
+				System.out.print(divisor+" ");
+			}
+			divisor++;
+			
+		
+		}while (divisor<numero);
+		
+		
+		System.out.println("\nSumaDivisores = "+sumaDivisores);
+		
+		if (numero==sumaDivisores){
+			System.out.println("El numero "+numero+ " es perfecto");
+		}else{
+			System.out.println("El numero "+numero+ " no es perfecto");	
+		}	
 		// Fin modificacion
 	}
 }

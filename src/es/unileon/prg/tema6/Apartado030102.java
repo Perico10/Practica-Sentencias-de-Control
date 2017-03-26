@@ -27,11 +27,19 @@ public class Apartado030102 extends Apartado {
 	 */
 	public void ejercicio01() {
 		cabecera("01","");
-
+		
+		int eleccion;
 		Rectangulo rectangulo=new Rectangulo(10,5);
 		System.out.println("Introduce una opcion (1 - Area, 2 - Perimetro):");
+		eleccion=Teclado.readInteger();
 		// Inicio modificacion
-        
+        if(eleccion==1){
+        	System.out.println(rectangulo.getArea());
+        }else if(eleccion==2){
+        	System.out.println(rectangulo.getPerimetro());
+        }else{
+        	System.out.println("Eleccion incorrecta");
+        }
 		
 		// Fin modificacion
 	}
@@ -47,7 +55,14 @@ public class Apartado030102 extends Apartado {
 	public void ejercicio02() {
 		cabecera("02", "");
 		// Inicio modificacion
-		
+		int anyo=0;
+		System.out.println("Introduce un año para saber si es o no bisiesto");
+		anyo=Teclado.readInteger();
+		if(anyo%400==0 || (anyo%4==0 && anyo%100!=0)){
+			System.out.println("El año es bisiesto");
+		}else{
+			System.out.println("El año no es bisiesto");
+		}
 		// Fin modificacion
 	}
 
@@ -81,19 +96,28 @@ public class Apartado030102 extends Apartado {
         NumeroEntero n1 = new NumeroEntero(10);
         NumeroEntero n2 = new NumeroEntero(10);
         
-        /* -- Quitar comentarios
-        if (n1 > n2){
+
+        if (n1.getValor() > n2.getValor()){
         	 System.out.println("N1-> "+n1);
              System.out.println("N1 es mayor que N2");
-        }
-        else if (n1 < n2) {
+        }else if (n1.getValor() < n2.getValor()) {
             System.out.println("N1 -> "+n1);
             System.out.println("N1 es menor que N2");
-        }
-        else
+        }else{
            System.out.println("N1 y N2 son iguales -> N1 ->"+n1+" N2 -> "+n2);
+        }
+        
+        if (n1.compareTo(n2)==-1){
+        	 System.out.println("N1-> "+n1);
+             System.out.println("N1 es mayor que N2");
+        }else if (n1.compareTo(n2)==1) {
+            System.out.println("N1 -> "+n1);
+            System.out.println("N1 es menor que N2");
+        }else{
+           System.out.println("N1 y N2 son iguales -> N1 ->"+n1+" N2 -> "+n2);
+        }        
 		
-		*/
+		
 		// Fin modificacion
 		
 	}
@@ -118,7 +142,36 @@ public class Apartado030102 extends Apartado {
 		cabecera("04", "");
 
 		// Inicio modificacion
+		int n1=0,n2=0,eleccion=0,n3=0;
+		boolean aux=true;
+		System.out.println("Introduzca un numero");
+		n1=Teclado.readInteger();
+		System.out.println("Introduzca otro numero");
+		n2=Teclado.readInteger();
 		
+		System.out.println("Que desea hacer: \n1 - Sumar \n2 - Multiplicar \n3 - Divisores");
+		eleccion=Teclado.readInteger();
+		if(eleccion==1){
+			n3=n1+n2;
+			System.out.println("n1+n2= "+n3);
+		}else if(eleccion==2){
+			n3=n1*n2;
+			System.out.println("n1*n2= "+n3);
+		}else if(eleccion==3){
+			if(n1%n2==0){
+				System.out.println("n1 es divisor de n2");
+				aux=false;
+			}
+			if(n2%n1==0){
+				System.out.println("n2 es divisor de n1");
+				aux=false;
+			}
+			if(aux==true){
+				System.out.println("No son divisores");
+			}
+		}else{
+			System.out.println("Opcion incorrecta");
+		}
 		
 		
         // Fin modificacion
@@ -145,8 +198,9 @@ public class Apartado030102 extends Apartado {
 
 		int a=2, b=5, c=1; //Modificar los valores para realizar pruebas o leerlos por teclado
 		
-		// Ecuacion2Grado ecuacion=new Ecuacion2Grado(a,b,c);
+		Ecuacion2Grado ecuacion=new Ecuacion2Grado(a,b,c);
 		// Inicio modificacion
+		System.out.println(ecuacion.toString());
         // Fin modificacion
 	}
 
@@ -162,6 +216,38 @@ public class Apartado030102 extends Apartado {
 		cabecera("06", "");
 
 		// Inicio modificacion
+		int n1=0,n2=0,n3=0,mayor=0;
+		System.out.println("Introduzca un numero");
+		n1=Teclado.readInteger();
+		System.out.println("Introduzca otro numero");
+		n2=Teclado.readInteger();
+		System.out.println("Introduzca otro numero");
+		n3=Teclado.readInteger();
+		
+		if(n1==n2 || n1==n3 || n2==n3){
+			if(n1==n2 && n1==n3 && n2==n3){
+				System.out.println("Los tres numeros son iguales");
+			}else if(n1==n2){
+					System.out.println("n1 es igual a n2");
+				}
+				if(n1==n3){
+					System.out.println("n1 es igual a n3");
+				}
+				if(n2==n3){
+					System.out.println("n2 es igual a n3");
+				}
+		}
+		
+		mayor=n1;
+		if(n2>mayor){
+			mayor=n2;
+		}
+		if(n3>mayor){
+			mayor=n3;
+		}
+		
+		System.out.println("El mayor es = "+mayor);
+		
 		// Fin modificacion
 	}
 }
