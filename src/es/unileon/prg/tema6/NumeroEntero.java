@@ -129,7 +129,10 @@ public class NumeroEntero {
 		}
 	}
 	 //Fin modificacion del ejercicio02 Apartado030102.
+<<<<<<< HEAD
 	
+=======
+>>>>>>> origin/master
 	
 	
 	//Inicio modificacion del ejercicio05 Apartado030202.
